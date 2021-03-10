@@ -48,12 +48,16 @@ export class InicioPage implements OnInit {
       icon: 'calendar-outline',
       name: "Datetime",
       redirectTo: "/date-time"
-    }
-    ,
+    },
     {
       icon: 'car-outline',
       name: "Fab",
       redirectTo: "/fab"
+    },
+    {
+      icon: 'grid-outline',
+      name: "Grid",
+      redirectTo: "/grid"
     }
   ];
   constructor() { }
