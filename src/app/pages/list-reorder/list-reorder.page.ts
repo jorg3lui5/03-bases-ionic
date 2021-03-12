@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-reorder.page.scss'],
 })
 export class ListReorderPage implements OnInit {
-
+  reorderDisable: boolean = true;
   personajes: string[]= ['Aquaman','Superman','Batman', 'Mujer Maravilla', 'Flash'];
   constructor() { }
 
@@ -22,5 +22,9 @@ export class ListReorderPage implements OnInit {
     event.detail.complete();
 
     console.log(this.personajes);
+  }
+
+  toggleReorder(){
+    this.reorderDisable=!this.reorderDisable;
   }
 }
