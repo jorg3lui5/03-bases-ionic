@@ -9,16 +9,18 @@ import { DataService } from '../../services/data.service';
 export class SearchPage implements OnInit {
 
   albumes: any[]= [];
+  textoBuscar:string='';
+
   constructor(private _dataService: DataService) { }
 
   ngOnInit() {
     this._dataService.getAlbumes().subscribe(albumes=> {
-      console.log(albumes);
       this.albumes=albumes;
     });
   }
 
   onSearchChange(event){
     console.log(event);
+    this.textoBuscar=event.detail.value
   }
 }
