@@ -10,6 +10,7 @@ import { DataService } from '../../services/data.service';
 export class SegmentPage implements OnInit {
 
   superheores: Observable<any>;
+  opcionSeleccionada: string = '';
 
   constructor(private _dataService: DataService) { }
 
@@ -17,7 +18,12 @@ export class SegmentPage implements OnInit {
     this.superheores = this._dataService.getHeroes();
   }
 
-  segmentChanged(event) {
-    console.log(event.detail.value);
+  segmentChanged( event ) {
+    //console.log(event.detail.value);
+    if(event.detail.value === 'todos'){
+      return this.opcionSeleccionada='';
+    }
+    this.opcionSeleccionada=event.detail.value;
+    
   }
 }
